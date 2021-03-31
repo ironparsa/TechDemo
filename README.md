@@ -13,3 +13,8 @@ Showcase the following features/functionalities:
 - Basic UI showing ammo and timer until game ends.
 - After action report with SQL database of shots fired/shots missed/enemies killed.
 - More if time allows it (Different type of gun/abilities/grenades).
+
+Additional meantions:
+- Showing use of version control with commit statements/reasoning.
+- Understanding the workflow of a project.
+- Script tidiness 
