@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-
+    //inital state should be false for being paused
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
         //logic for pausing the game using escape key
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            //unlocks the mouse from the game screen
             Cursor.lockState = CursorLockMode.None;
             if (GameIsPaused)
             {

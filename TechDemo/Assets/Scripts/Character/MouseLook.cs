@@ -14,6 +14,7 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //locks the cursor to the game screen
         Cursor.lockState = CursorLockMode.Locked;
     }
 

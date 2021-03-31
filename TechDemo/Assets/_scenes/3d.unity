@@ -1139,7 +1139,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  isGrounded: 1
+  isGrounded: 0
+  maxJump: 2
+  timesJumped: 0
 --- !u!1 &1953448469
 GameObject:
   m_ObjectHideFlags: 0

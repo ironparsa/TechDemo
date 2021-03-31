@@ -18,24 +18,18 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     public bool isGrounded;
 
+    public float maxJump;
+    public float timesJumped;
+
     // Update is called once per frame
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if(isGrounded == false)
-        {
-            Debug.Log("is false");
-        }
-
-        if (isGrounded == true)
-        {
-            Debug.Log("is true");
-        }
-
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+            timesJumped = 0;
         }
 
         float x = Input.GetAxis("Horizontal");
@@ -45,9 +39,11 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        // Jumping will work if the user is on the floor OR is in the air and has jumped less than the max number of jumps. These values are set in the editor
+        if((Input.GetButtonDown("Jump") && isGrounded) || (timesJumped < maxJump && Input.GetButtonDown("Jump")))
         {
-            Debug.Log("TEST");
+            Debug.Log("Jumped");
+            timesJumped++;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
