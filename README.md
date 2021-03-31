@@ -5,7 +5,7 @@ A shooter with basic art assets that will track the user's performance and have 
 Showcase the following features/functionalities:
 - Pause menu
 - Level/Scene manager
-- Backwards time traveling in the game.
+- Make leblanc-w the signature gameplay feature. Dash forward, leave a clone
 - NPC AI pathing around obstacles.
 - Randomzied spawning location.
 - Basic animation on the gun to show reloading.
