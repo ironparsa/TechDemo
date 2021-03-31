@@ -11,6 +11,12 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
 
+    public Camera myCamera;
+    float cameraZoomInSpeed = .1f;
+    float cameraZoomOutSpeed = .7f;
+    float maxFOV = 60f;
+    float zoomInFOV = 30f;
+
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -22,7 +28,20 @@ public class PlayerMovement : MonoBehaviour
     public float maxJump;
     public float timesJumped;
 
-    // Update is called once per frame
+    void ChangeFOV(string direction)
+    {
+        if(myCamera.fieldOfView > zoomInFOV && direction == "in")
+        {
+            Debug.Log("Trying to lower camera FOV");
+            myCamera.fieldOfView = Mathf.Lerp(myCamera.fieldOfView, zoomInFOV, cameraZoomInSpeed);
+        }
+        if(myCamera.fieldOfView <= maxFOV && direction == "out")
+        {
+            Debug.Log("resetting camera fov to 60");
+            myCamera.fieldOfView = Mathf.MoveTowards(myCamera.fieldOfView, maxFOV, cameraZoomOutSpeed);             
+        }
+    }
+
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -40,17 +59,23 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        //Slowing time down with right click
-        if (Input.GetMouseButtonDown(1))
+        // put the functionality within this if statement because of an issue where the pause menu could be overwritten by right clicking again
+        if (PauseMenu.GameIsPaused == false)
         {
-            Debug.Log("Pressed Right click");            
-            Time.timeScale = 0.35f; //could potentially make this gradually scale instead of instantly.
-        }
-        //putting time back to normal when letting go of right click
-        if (Input.GetMouseButtonUp(1))
-        {
-            Debug.Log("Let Right click go");
-            Time.timeScale = 1f;
+            //Slowing time down with right click
+            if (Input.GetMouseButton(1))
+            {
+                Debug.Log("Pressed Right click");
+                Time.timeScale = 0.35f; //could potentially make this gradually scale instead of instantly.
+                ChangeFOV("in");
+            }
+            //putting time back to normal when letting go of right click
+            else
+            {
+                Debug.Log("Let Right click go");
+                Time.timeScale = 1f;
+                ChangeFOV("out");
+            }
         }
 
         // Jumping will work if the user is on the floor OR is in the air and has jumped less than the max number of jumps. These values are set in the editor
