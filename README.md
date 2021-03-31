@@ -6,7 +6,7 @@ Showcase the following features/functionalities:
 - Pause menu
 - Level/Scene manager
 - Backwards time traveling in the game.
-- NPC AI pathing.
+- NPC AI pathing around obstacles.
 - Randomzied spawning location.
 - Basic animation on the gun to show reloading.
 - Basic UI showing ammo and timer until game ends.
