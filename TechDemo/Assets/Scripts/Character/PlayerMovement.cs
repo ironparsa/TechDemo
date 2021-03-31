@@ -5,18 +5,21 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
+    [Header("Character Movement Options")]
     public CharacterController controller;
 
     public float speed = 12f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
 
+    [Header("Camera Options")]
     public Camera myCamera;
     float cameraZoomInSpeed = .1f;
     float cameraZoomOutSpeed = .7f;
     float maxFOV = 60f;
     float zoomInFOV = 30f;
 
+    [Header("Ground Checking")]
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -25,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
 
     //Can be adjusted in the future to allow for more jumps *item drop/power up/etc*
+    [Header("Jump Options")]
     public float maxJump;
     public float timesJumped;
 
