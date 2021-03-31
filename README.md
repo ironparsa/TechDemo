@@ -17,3 +17,4 @@ Showcase the following features/functionalities:
 Additional meantions:
 - Showing use of version control with commit statements/reasoning.
 - Understanding the workflow of a project.
+- Script tidiness 
