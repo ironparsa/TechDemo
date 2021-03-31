@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     public bool isGrounded;
 
+    //Can be adjusted in the future to allow for more jumps *item drop/power up/etc*
     public float maxJump;
     public float timesJumped;
 
@@ -38,6 +39,19 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime);
+
+        //Slowing time down with right click
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("Pressed Right click");            
+            Time.timeScale = 0.35f; //could potentially make this gradually scale instead of instantly.
+        }
+        //putting time back to normal when letting go of right click
+        if (Input.GetMouseButtonUp(1))
+        {
+            Debug.Log("Let Right click go");
+            Time.timeScale = 1f;
+        }
 
         // Jumping will work if the user is on the floor OR is in the air and has jumped less than the max number of jumps. These values are set in the editor
         if((Input.GetButtonDown("Jump") && isGrounded) || (timesJumped < maxJump && Input.GetButtonDown("Jump")))
