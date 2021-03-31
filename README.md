@@ -7,6 +7,7 @@ Showcase the following features/functionalities:
 - Level/Scene manager
 - Make leblanc-w the signature gameplay feature. Dash forward, leave a clone
 - NPC AI pathing around obstacles.
+- Slowing down time when zooming in
 - Randomzied spawning location.
 - Basic animation on the gun to show reloading.
 - Basic UI showing ammo and timer until game ends.
