@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 12f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
+    public float dashSpeed;
+    public float dashTime;
+    public float dashMax;
+    public float dashCount;
 
     [Header("Camera Options")]
     public Camera myCamera;
@@ -36,12 +40,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if(myCamera.fieldOfView > zoomInFOV && direction == "in")
         {
-            Debug.Log("Trying to lower camera FOV");
+            //Debug.Log("Trying to lower camera FOV");
             myCamera.fieldOfView = Mathf.Lerp(myCamera.fieldOfView, zoomInFOV, cameraZoomInSpeed);
         }
         if(myCamera.fieldOfView <= maxFOV && direction == "out")
         {
-            Debug.Log("resetting camera fov to 60");
+            //Debug.Log("resetting camera fov to 60");
             myCamera.fieldOfView = Mathf.MoveTowards(myCamera.fieldOfView, maxFOV, cameraZoomOutSpeed);             
         }
     }
@@ -54,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -2f;
             timesJumped = 0;
+            dashCount = 0;
         }
 
         float x = Input.GetAxis("Horizontal");
@@ -69,17 +74,23 @@ public class PlayerMovement : MonoBehaviour
             //Slowing time down with right click
             if (Input.GetMouseButton(1))
             {
-                Debug.Log("Pressed Right click");
+                //Debug.Log("Pressed Right click");
                 Time.timeScale = 0.35f; //could potentially make this gradually scale instead of instantly.
                 ChangeFOV("in");
             }
             //putting time back to normal when letting go of right click
             else
             {
-                Debug.Log("Let Right click go");
+                //Debug.Log("Let Right click go");
                 Time.timeScale = 1f;
                 ChangeFOV("out");
             }
+        }
+
+        if (Input.GetKeyDown("z"))
+        {
+            StartCoroutine(Dash());
+            dashCount++;
         }
 
         // Jumping will work if the user is on the floor OR is in the air and has jumped less than the max number of jumps. These values are set in the editor
@@ -93,5 +104,32 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    IEnumerator Dash()
+    {
+        /*
+         * checking to make sure player has a dash left.
+         * this can be expanded to add a timer
+        */
+        if (dashCount < dashMax)
+        {
+            float startTime = Time.time;
+
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+
+            Vector3 move = transform.right * x + transform.forward * z;
+
+            Debug.Log(transform.right);
+            Debug.Log(transform.forward);
+
+            while (Time.time < (startTime + dashTime))
+            {
+                controller.Move(move * dashSpeed * Time.deltaTime);
+
+                yield return null;
+            }
+        }        
     }
 }
