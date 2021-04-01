@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FxTemporaire
+  - Fire
+  - DashPowerUp
+  - JumpPowerUp
+  - Bullet
+  - Target
+  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -12,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - DoNotCollide
   - 
   - 
   - 

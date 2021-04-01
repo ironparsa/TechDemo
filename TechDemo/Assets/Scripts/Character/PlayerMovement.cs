@@ -90,12 +90,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown("z"))
         {
             StartCoroutine(Dash());
-            dashCount++;
         }
 
         // Jumping will work if the user is on the floor OR is in the air and has jumped less than the max number of jumps. These values are set in the editor
         if((Input.GetButtonDown("Jump") && isGrounded) || (timesJumped < maxJump && Input.GetButtonDown("Jump")))
-        {
+        {           
             Debug.Log("Jumped");
             timesJumped++;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
@@ -111,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
         /*
          * checking to make sure player has a dash left.
          * this can be expanded to add a timer
-        */
+        */        
         if (dashCount < dashMax)
         {
             float startTime = Time.time;
@@ -121,8 +120,7 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 move = transform.right * x + transform.forward * z;
 
-            Debug.Log(transform.right);
-            Debug.Log(transform.forward);
+            dashCount++;
 
             while (Time.time < (startTime + dashTime))
             {
