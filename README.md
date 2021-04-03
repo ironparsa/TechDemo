@@ -2,6 +2,9 @@
 Project Description:
 A shooter with basic art assets that will track the user login and have AI pathing. Note: this was all created in a few days while working full time on other projects.
 
+A quick video walkthrough of the Unity project. I did not cover everything in this.
+https://youtu.be/xi0N6e4Wp-Y
+
 Showcase the following features/functionalities:
 - Pause menu
 - Level/Scene manager
@@ -21,8 +24,7 @@ Additional meantions:
 - Script tidiness 
 
 
-A quick video walkthrough of the Unity project. I did not cover everything in this.
-https://youtu.be/xi0N6e4Wp-Y
+
 
 
 
