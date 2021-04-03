@@ -59,6 +59,7 @@ public class MonsterController : MonoBehaviour
     IEnumerator SpawnMonster(float secs)
     {
         yield return new WaitForSeconds(secs);
+        //random location for the monsters to spawn at.
         var position = new Vector3(Random.Range(-20f, 12f), 1.88f, Random.Range(-31f, -28f));
         Instantiate(monster, position, Quaternion.identity);
         if (spawnAmount >= amountSpawned)

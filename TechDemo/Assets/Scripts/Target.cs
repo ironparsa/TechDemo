@@ -13,8 +13,10 @@ public class Target : MonoBehaviour
         }
     }
 
+
     void Die()
     {
+        //checks if the object killed is a "target" type or a "powerup".
         Debug.Log(gameObject.name);
         if(gameObject.tag == "Target")
         {

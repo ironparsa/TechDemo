@@ -17,6 +17,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //left click to shoot
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
@@ -46,6 +47,7 @@ public class Gun : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
 
+            //where the bullet hit
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGO, 2f);
         }
