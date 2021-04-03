@@ -13,6 +13,7 @@ Showcase the following features/functionalities:
 - Power ups that can be shot to pickup
 - Power ups can be picked up by walking through
 - Envrionment placing to require certain mechanics (double/triple jump, double dash, etc)
+- **Many of the features are easily expanded on and changed within Unity or the code by avoiding hard coding in values and properties**
 
 Additional meantions:
 - Showing use of version control with commit statements/reasoning.
