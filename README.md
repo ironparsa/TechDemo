@@ -8,7 +8,7 @@ Showcase the following features/functionalities:
 - NPC AI pathing around obstacles
 - Randomzied spawning location for NPCS
 - Slowing down time when zooming in
-- Login server integration (username and password must be 8 characters and unique to the server).
+- Login server integration (username and password must be at least 8 characters and unique to the server).
 - Gun + shooting mechanics
 - Power ups that can be shot to pickup
 - Power ups can be picked up by walking through
