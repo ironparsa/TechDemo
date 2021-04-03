@@ -21,10 +21,10 @@ Additional meantions:
 - Script tidiness 
 
 
-A quick video walkthrough of the code. I did not cover everything in this.
+A quick video walkthrough of the Unity project. I did not cover everything in this.
 https://youtu.be/xi0N6e4Wp-Y
 
 
 
-Another file I had found on my youtube of another example project I made in Python awhile back.
+Another video I had found on my youtube of another example project I made in Python awhile back.
 https://youtu.be/Wa9FkPM7T_o
