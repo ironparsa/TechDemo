@@ -1,6 +1,6 @@
 # TechDemo
 Project Description:
-A shooter with basic art assets that will track the user's performance and have AI pathing.
+A shooter with basic art assets that will track the user login and have AI pathing. Note: this was all created in a few days while working full time on other projects.
 
 Showcase the following features/functionalities:
 - Pause menu
@@ -19,3 +19,12 @@ Additional meantions:
 - Showing use of version control with commit statements/reasoning.
 - Understanding the workflow of a project.
 - Script tidiness 
+
+
+A quick video walkthrough of the code. I did not cover everything in this.
+https://youtu.be/xi0N6e4Wp-Y
+
+
+
+Another file I had found on my youtube of another example project I made in Python awhile back.
+https://youtu.be/Wa9FkPM7T_o
