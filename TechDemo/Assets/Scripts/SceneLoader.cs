@@ -16,6 +16,14 @@ public class SceneLoader : MonoBehaviour
     public void _3dScene()
     {
         Debug.Log("Switching to 3D Scene");
+        string scene = SceneManager.GetActiveScene().name;
+        if (scene == "3d")
+        {
+            GameObject.Find("PauseMenu").SetActive(false);
+            Time.timeScale = 1f;
+            PauseMenu.GameIsPaused = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
         SceneManager.LoadScene("3d");
     }
     //switch to "MainMenu" scene
