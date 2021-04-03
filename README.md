@@ -5,14 +5,14 @@ A shooter with basic art assets that will track the user's performance and have 
 Showcase the following features/functionalities:
 - Pause menu
 - Level/Scene manager
-- Make leblanc-w the signature gameplay feature. Dash forward, leave a clone
-- NPC AI pathing around obstacles.
+- NPC AI pathing around obstacles
+- Randomzied spawning location for NPCS
 - Slowing down time when zooming in
-- Randomzied spawning location.
-- Basic animation on the gun to show reloading.
-- Basic UI showing ammo and timer until game ends.
-- After action report with SQL database of shots fired/shots missed/enemies killed.
-- More if time allows it (Different type of gun/abilities/grenades).
+- Login server integration (username and password must be at least 8 characters and unique to the server).
+- Gun + shooting mechanics
+- Power ups that can be shot to pickup
+- Power ups can be picked up by walking through
+- Envrionment placing to require certain mechanics (double/triple jump, double dash, etc)
 
 Additional meantions:
 - Showing use of version control with commit statements/reasoning.
