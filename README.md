@@ -1,4 +1,7 @@
 # TechDemo
+Languages used:
+C# and PHP
+
 Project Description:
 A shooter with basic art assets that will track the user login and have AI pathing. Note: this was all created in a few days while working full time on other projects.
 
